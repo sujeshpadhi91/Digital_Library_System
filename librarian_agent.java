@@ -9,6 +9,13 @@ public class librarian_agent extends Agent {
             public void action() {
 
             }
+
+            public boolean done() {
+                if (done) {
+                    System.out.printf("My name is %s%n", getLocalName());
+                }
+                return done;
+            }
         }
     }
 
