@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0f23c38f-c67f-42d8-907e-6a8eca3526f5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Digital_Library_System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jade.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/vcs.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="librarian_agent" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Hs8o191VFLMMyyZE85Dz0V6fJG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JADE/jade/lib/jade.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="jade_config" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Digital_Library_System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Digital_Library_System" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f23c38f-c67f-42d8-907e-6a8eca3526f5" name="Changes" comment="" />
+      <created>1669062603603</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669062603603</updated>
+      <workItem from="1669062606617" duration="4488000" />
+      <workItem from="1669267569280" duration="828000" />
+      <workItem from="1669326643768" duration="1595000" />
+      <workItem from="1669331975796" duration="4676000" />
+    </task>
+    <task id="LOCAL-00001" summary="first draft librarian_agent.java into main">
+      <created>1669062772440</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669062772440</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first draft librarian_agent.java into main">
+      <created>1669065479733</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669065479733</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added a simple behaviour">
+      <created>1669065523621</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669065523621</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added a simple behaviour">
+      <created>1669065534685</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669065534685</updated>
+    </task>
+    <task id="LOCAL-00005" summary="created a librarian agent class">
+      <created>1669066338449</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669066338449</updated>
+    </task>
+    <task id="LOCAL-00006" summary="first draft librarian_agent.java into main">
+      <created>1669066404092</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669066404092</updated>
+    </task>
+    <task id="LOCAL-00007" summary="first draft librarian_agent.java into main">
+      <created>1669066641680</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669066641680</updated>
+    </task>
+    <task id="LOCAL-00008" summary="first draft librarian_agent.java into main">
+      <created>1669067498618</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669067498618</updated>
+    </task>
+    <task id="LOCAL-00009" summary="first draft librarian_agent.java into main">
+      <created>1669067516493</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669067516493</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added setup() method">
+      <created>1669067746252</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669067746252</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added setup() method">
+      <created>1669067820254</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669067820254</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added setup() method">
+      <created>1669067837964</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669067837964</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added setup() method">
+      <created>1669067844931</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669067844931</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added setup() method">
+      <created>1669067972755</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669067972755</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Committing readme.md">
+      <created>1669331294878</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669331294878</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added Librarian Agent name">
+      <created>1669331329595</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669331329595</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added Librarian Agent name">
+      <created>1669331371220</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669331371220</updated>
+    </task>
+    <task id="LOCAL-00018" summary="updated setup() method">
+      <created>1669332167840</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669332167840</updated>
+    </task>
+    <task id="LOCAL-00019" summary="updated setup() method">
+      <created>1669332187089</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1669332187089</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added a counter">
+      <created>1669332452180</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1669332452180</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added a counter">
+      <created>1669332459259</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669332459259</updated>
+    </task>
+    <task id="LOCAL-00022" summary="added a counter">
+      <created>1669332498483</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1669332498483</updated>
+    </task>
+    <task id="LOCAL-00023" summary="added a Simple Behaviour">
+      <created>1669336888923</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669336888923</updated>
+    </task>
+    <task id="LOCAL-00024" summary="added a Simple Behaviour">
+      <created>1669336998851</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1669336998851</updated>
+    </task>
+    <task id="LOCAL-00025" summary="added a SimpleBehaviour">
+      <created>1669337234019</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1669337234019</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added a done()">
+      <created>1669338015552</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1669338015552</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="librarian_agent" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="70" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="86" />
+                  <entry key="Table.Default.Hash.ColumnIdWidth" value="52" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="48" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added a simple behaviour" />
+    <MESSAGE value="added a librarian class" />
+    <MESSAGE value="created a librarian agent class" />
+    <MESSAGE value="first draft librarian_agent.java into main" />
+    <MESSAGE value="added" />
+    <MESSAGE value="added setup() method" />
+    <MESSAGE value="updated Librarian Agent Details" />
+    <MESSAGE value="Committing readme.md" />
+    <MESSAGE value="added Librarian Agent name" />
+    <MESSAGE value="updated setup() method" />
+    <MESSAGE value="added a counter" />
+    <MESSAGE value="added a Simple Behaviour" />
+    <MESSAGE value="added a SimpleBehaviour" />
+    <MESSAGE value="added a done()" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a done()" />
+  </component>
+</project>
