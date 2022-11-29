@@ -23,6 +23,16 @@ public class librarian_agent extends Agent {
                     case 4:
                         //Process book lend request and update the status in Database
 
+                    case 5:
+                        //Wait for Book return request from Student
+
+                    case 6:
+                        //Process book return request and update the status in Database
+
+                    case 7:
+                        //Finish processing the book requests
+                        done = true;
+                }
             }
 
             public boolean done() {

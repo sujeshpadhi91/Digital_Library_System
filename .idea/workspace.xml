@@ -37,13 +37,14 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/JADE/jade/lib/jade.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
@@ -60,6 +61,7 @@
     <configuration name="jade_config" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;linrarian_agent&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,6 +92,7 @@
       <workItem from="1669267569280" duration="828000" />
       <workItem from="1669326643768" duration="1595000" />
       <workItem from="1669331975796" duration="4676000" />
+      <workItem from="1669741521290" duration="1942000" />
     </task>
     <task id="LOCAL-00001" summary="first draft librarian_agent.java into main">
       <created>1669062772440</created>
@@ -273,7 +276,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669338015552</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added the switch case structure to iterate through the roles of the librarian agent">
+      <created>1669742498502</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1669742498502</updated>
+    </task>
+    <task id="LOCAL-00028" summary="updated the readme file with the team responsibilities">
+      <created>1669742734823</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1669742734823</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +342,9 @@
     <MESSAGE value="added a Simple Behaviour" />
     <MESSAGE value="added a SimpleBehaviour" />
     <MESSAGE value="added a done()" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a done()" />
+    <MESSAGE value="added the switch case structure to iterate through the roles of the librarian agent" />
+    <MESSAGE value="updated the readme file with the team responsibilities" />
+    <MESSAGE value="updated a case 7 for done()" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated a case 7 for done()" />
   </component>
 </project>
