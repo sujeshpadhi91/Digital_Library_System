@@ -28,7 +28,10 @@ public class librarian_agent extends Agent {
 
                     case 6:
                         //Process book return request and update the status in Database
-                        
+
+                    case 7:
+                        //Finish processing the book requests
+                        done = true;
                 }
             }
 
