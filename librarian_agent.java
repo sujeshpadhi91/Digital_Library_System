@@ -7,6 +7,21 @@ public class librarian_agent extends Agent {
 
         addBehaviour(new SimpleBehaviour(this) {
             public void action() {
+                switch(counter) {
+                    case 0:
+                        //Wait for Book lend request from Student
+
+                    case 1:
+                        //Send student verification request to the Admin agent
+
+                    case 2:
+                        //Wait for student verification status
+
+                    case 3:
+                        //Checks for the availibilty of the book requested
+
+                    case 4:
+                        //Process book lend request and update the status in Database
 
             }
 
