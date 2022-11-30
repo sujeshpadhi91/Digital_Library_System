@@ -21,10 +21,10 @@ public class stationer_agent extends Agent {
                         //Checks for the availibilty of the item requested
 
                     case 4:
-                        //Process item request and update the status in Database
+                        //Process item request and update the status in  the Database
 
                     case 5:
-                        //Finish processing the book requests
+                        //Finish processing the item requests
                         done = true;
                 }
             }
