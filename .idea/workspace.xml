@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f23c38f-c67f-42d8-907e-6a8eca3526f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Digital_Library_System.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Digital_Library_System.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/jade.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jade.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin_agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarian_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/librarian_agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/print_agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printer_agent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stationer_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stationer_agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APDescription.txt" beforeDir="false" afterPath="$PROJECT_DIR$/APDescription.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digital_Library_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Digital_Library_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTPs-Main-Container.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MTPs-Main-Container.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin_agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/librarian_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/librarian_agent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,14 +22,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Abdelrahman-Elnaggar &lt;nag.abdelrahman95@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="New_config_branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,29 +33,26 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Hs8o191VFLMMyyZE85Dz0V6fJG" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Remove" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JADE/jade/lib/jade.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/hp/JADE-all-4.5.0/lib/jade.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
   },
   "keyToStringList": {
     "GitStage.ChangesTree.GroupingKeys": [
@@ -69,7 +61,7 @@
       "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hp\IdeaProjects\Digital_Library_System\src" />
@@ -77,10 +69,11 @@
   </component>
   <component name="RunManager">
     <configuration name="jade_config" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="jade.Boot" />
       <module name="Digital_Library_System" />
-      <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;librarian_agent&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;Librarian:librarian_agent; Admin:admin_agent&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,7 +92,7 @@
       <workItem from="1669326643768" duration="1595000" />
       <workItem from="1669331975796" duration="4676000" />
       <workItem from="1669741521290" duration="1942000" />
-      <workItem from="1669933048606" duration="588000" />
+      <workItem from="1669927684961" duration="8584000" />
     </task>
     <task id="LOCAL-00001" summary="first draft librarian_agent.java into main">
       <created>1669062772440</created>
@@ -314,7 +307,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="2022_12_01_15_20_Sujesh" />
+                        <option value="librarian_agent" />
                       </list>
                     </value>
                   </entry>

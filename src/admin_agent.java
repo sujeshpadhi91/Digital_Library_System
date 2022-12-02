@@ -14,11 +14,12 @@ public class admin_agent extends Agent {
                         //Wait for Verification request from the Librarian Agent or the Stationer Agent or the Print Agent
                         ACLMessage student_verification = blockingReceive();
                         if (student_verification != null) {
-                            System.out.println("Request to verify the student: "+student_verification.getContent());
+                            System.out.println("Admin: Request to verify the student: "+student_verification.getContent());
                                 ACLMessage student_verification_status = student_verification.createReply();
                                 student_verification_status.setPerformative(ACLMessage.INFORM);
-                                student_verification_status.setContent("Student is Registered");
+                                student_verification_status.setContent("Admin: Student is Registered");
                                 send(student_verification_status);
+                                admin_counter = 4;
                         }
                         break;
 
@@ -30,13 +31,15 @@ public class admin_agent extends Agent {
                         //Take and process a new de-registration request
                     case 4:
                         //Finish processing the student verification and/or registration requests
-                        System.out.printf("Finished Admin Roles");
+                        System.out.println("Admin: Finished Admin Roles");
                         done = true;
-                        break;
                 }
             }
             public boolean done() {
-                return false;
+                if (done) {
+                    System.out.println("My name is: " +getLocalName());
+                }
+                return done;
             }
         });
     }
