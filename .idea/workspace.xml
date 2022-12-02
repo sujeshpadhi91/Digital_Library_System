@@ -22,9 +22,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Abdelrahman-Elnaggar &lt;nag.abdelrahman95@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="librarian_agent" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,26 +38,29 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Hs8o191VFLMMyyZE85Dz0V6fJG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Remove" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/hp/JADE-all-4.5.0/lib/jade.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JADE/jade/lib/jade.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   },
   "keyToStringList": {
     "GitStage.ChangesTree.GroupingKeys": [
@@ -61,7 +69,7 @@
       "repository"
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hp\IdeaProjects\Digital_Library_System\src" />
@@ -70,10 +78,9 @@
   <component name="RunManager">
     <configuration name="jade_config" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="jade.Boot" />
       <module name="Digital_Library_System" />
-      <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;asker:HelloAgent; teller:TellerAgent&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;librarian_agent&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,6 +99,7 @@
       <workItem from="1669326643768" duration="1595000" />
       <workItem from="1669331975796" duration="4676000" />
       <workItem from="1669741521290" duration="1942000" />
+      <workItem from="1669933048606" duration="588000" />
     </task>
     <task id="LOCAL-00001" summary="first draft librarian_agent.java into main">
       <created>1669062772440</created>
@@ -306,7 +314,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="librarian_agent" />
+                        <option value="2022_12_01_15_20_Sujesh" />
                       </list>
                     </value>
                   </entry>
