@@ -20,7 +20,7 @@ public class librarian_agent extends Agent {
                     case 1:
                         //Send student verification request to the Admin agent
                         String student_input = "";
-                        System.out.println("Enter Student First Name: ");
+                        System.out.println("Librarian: Enter Student First Name: ");
                         Scanner scanner = new Scanner(System.in);
                         student_input = scanner.nextLine();
 
@@ -28,17 +28,19 @@ public class librarian_agent extends Agent {
                         student_verification.setContent(student_input);
                         student_verification.addReceiver(new AID("ADMIN", AID.ISLOCALNAME));
                         send(student_verification);
-                        System.out.println("Sent Student Verification Request to the ADMIN");
+                        System.out.println("Librarian: Sent Student Verification Request to the ADMIN");
+                        librarian_counter = 2;
                         break;
 
                     case 2:
                         //Wait for student verification status
-                        System.out.println("Receiving student verification status from the Admin....");
+                        System.out.println("Librarian: Receiving student verification status from the Admin....");
                         ACLMessage student_verification_status = blockingReceive();
                         if (student_verification_status != null) {
-                            System.out.println("Student is Registered");
+                            System.out.println("Librarian: Student is Registered");
                         }
-                        librarian_counter = 0;
+                        librarian_counter = 7;
+                        //librarian_counter = 0;
                         break;
 
                     case 3:
@@ -51,7 +53,7 @@ public class librarian_agent extends Agent {
                         //Process book return request and update the status in Database
                     case 7:
                         //Finish processing the book requests
-                        System.out.printf("Finished Librarian Roles");
+                        System.out.println("Librarian: Finished Librarian Roles");
                         done = true;
                 }
             }
