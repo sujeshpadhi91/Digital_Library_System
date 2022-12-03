@@ -6,13 +6,12 @@ import jade.lang.acl.ACLMessage;
 import java.util.Scanner;
 
 public class librarian_agent extends Agent {
-    private int librarian_counter = 0;
+    public static int librarian_counter = 0;
     private boolean done = false;
     protected void setup() {
         System.out.printf("My name is %s%n", getLocalName());
         addBehaviour(new SimpleBehaviour(this) {
             public void action() {
-
                 switch (librarian_counter) {
                     case 0:
                         //Wait for Book lend request from Student
@@ -36,15 +35,23 @@ public class librarian_agent extends Agent {
                         //Wait for student verification status
                         System.out.println("Librarian: Receiving student verification status from the Admin....");
                         ACLMessage student_verification_status = blockingReceive();
-                        if (student_verification_status != null) {
+                        //System.out.println(student_verification_status.getContent());
+                        if (student_verification_status.getContent().equals("Registered"))
+                        {
                             System.out.println("Librarian: Student is Registered");
                         }
-                        librarian_counter = 7;
+                        else
+                        {
+                            System.out.println("Librarian: Student is Not Registered");
+                        }
+                        //System.out.println("Librarian: "+librarian_counter);
+                        //librarian_counter = 7;
                         //librarian_counter = 0;
                         break;
 
                     case 3:
                         //Checks for the availability of the book requested
+                        System.out.println("Case 3");
                     case 4:
                         //Process book lend request and update the status in Database
                     case 5:
