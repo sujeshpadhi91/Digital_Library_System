@@ -3,7 +3,6 @@ import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class librarian_agent extends Agent {
@@ -35,35 +34,17 @@ public class librarian_agent extends Agent {
 
                     case 2:
                         //Wait for student verification status
-                        //System.out.println("Librarian: Receiving student verification status from the Admin....");
-                        ACLMessage student_verification_status = blockingReceive();
                         System.out.println("Librarian: Receiving student verification status from the Admin....");
+                        ACLMessage student_verification_status = blockingReceive();
                         if (student_verification_status != null) {
                             System.out.println("Librarian: Student is Registered");
-                            librarian_counter = 3;
                         }
-                        else {
-                            librarian_counter = 7;
-                        }
-
+                        librarian_counter = 7;
+                        //librarian_counter = 0;
                         break;
 
                     case 3:
                         //Checks for the availability of the book requested
-                        String[] books = {"Book1","Book2","Book3"};
-                        String book_title = "";
-                        System.out.println("Enter the Book Name: ");
-                        Scanner scanner1 = new Scanner(System.in);
-                        book_title = scanner1.nextLine();
-                        boolean book_availability = Arrays.asList(books).contains((book_title));
-                        if (book_availability) {
-                            System.out.println("Librarian: Book is available");
-                        }
-                        else {
-                            System.out.println("Librarian: Book is unavailable");
-                        }
-                        break;
-
                     case 4:
                         //Process book lend request and update the status in Database
                     case 5:
