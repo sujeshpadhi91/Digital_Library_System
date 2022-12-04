@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f23c38f-c67f-42d8-907e-6a8eca3526f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/adminAgentGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/librarianAgentGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mainAgentGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/printAgentGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stationerAgentGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Digital_Library_System.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/librarian_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/librarian_agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APDescription.txt" beforeDir="false" afterPath="$PROJECT_DIR$/APDescription.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTPs-Main-Container.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MTPs-Main-Container.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminAgentGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/admin_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admin_agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/librarianAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/librarianAgentGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mainAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainAgentGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/adminAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/adminAgentGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admin_agent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin_agent$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admin_agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin_agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/librarianAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarianAgentGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/librarian_agent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarian_agent$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/librarian_agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarian_agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainAgentGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,19 +46,24 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Hs8o191VFLMMyyZE85Dz0V6fJG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="1" id="Remove" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "134",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/hp/JADE-all-4.5.0/lib/jade.jar",
+    "last_opened_file_path": "C:/Users/hp/IdeaProjects/Digital_Library_System",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,7 +96,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="jade.Boot" />
       <module name="Digital_Library_System" />
-      <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;Librarian:librarian_agent; Admin:admin_agent&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;Master:master_agent;Librarian:librarian_agent;Admin:admin_agent&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -343,6 +352,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added a simple behaviour" />
     <MESSAGE value="added a librarian class" />
     <MESSAGE value="created a librarian agent class" />

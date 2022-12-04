@@ -96,6 +96,8 @@ public class admin_agent extends Agent {
                         BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
                         System.out.println("Admin: Enter first name: ");
                         String name = sc.nextLine();
+                       // String name2 = adminAgentGUI.x;
+                        //System.out.println("Admin: Enter first name:"+name2);
                         System.out.println("Admin: Enter ID:");
                         int id = sc.nextInt();
                         System.out.println("Admin: Enter email:");

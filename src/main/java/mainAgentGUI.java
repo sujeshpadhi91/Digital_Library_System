@@ -7,9 +7,10 @@ public class mainAgentGUI extends JFrame implements ActionListener {
 
     JButton stationery_button;
     JButton library_button;
-    JButton admin_button;
+    JButton Register_button;
+    JButton deregister_button;
     JButton printer_button;
-
+   public static int master_choice=0;
 
     mainAgentGUI()
     {
@@ -22,7 +23,7 @@ public class mainAgentGUI extends JFrame implements ActionListener {
         stationery_button.setFocusable(false);
         ///////////////////////////////////////
         library_button = new JButton();
-        library_button.setBounds(150,250,100,50);
+        library_button.setBounds(50,250,100,50);
         library_button.addActionListener(this);
         library_button.setText("Library");
         library_button.setFocusable(false);
@@ -33,11 +34,17 @@ public class mainAgentGUI extends JFrame implements ActionListener {
         printer_button.setText("Print");
         printer_button.setFocusable(false);
         /////////////////////////////////////
-        admin_button = new JButton();
-        admin_button.setBounds(300,250,100,50);
-        admin_button.addActionListener(this);
-        admin_button.setText("Register");
-        admin_button.setFocusable(false);
+        Register_button = new JButton();
+        Register_button.setBounds(200,250,100,50);
+        Register_button.addActionListener(this);
+        Register_button.setText("Register");
+        Register_button.setFocusable(false);
+        ///////////////////////////////////////
+        deregister_button = new JButton();
+        deregister_button.setBounds(350,250,100,50);
+        deregister_button.addActionListener(this);
+        deregister_button.setText("Deregister");
+        deregister_button.setFocusable(false);
         //////////////////////////////////////////////////////////
         //JFrame frame = new JFrame();//create frame
         //label creation
@@ -61,7 +68,8 @@ public class mainAgentGUI extends JFrame implements ActionListener {
         this.setLayout(null);
         //this.setLayout(new FlowLayout());
         this.add(label);
-        this.add(admin_button);
+        this.add(Register_button);
+        this.add(deregister_button);
         this.add(library_button);
         this.add(printer_button);
         this.add(stationery_button);
@@ -74,37 +82,54 @@ public class mainAgentGUI extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== stationery_button)
         {
-            stationerAgentGUI stationry_window = new stationerAgentGUI();
+            master_choice=4;
+            adminAgentGUI admin_window = new adminAgentGUI();
+            //stationerAgentGUI stationry_window = new stationerAgentGUI();
             //textfield.getText();
             this.dispose();
-            System.out.println("hiiiiiiiiiiiiiiii");
+            //System.out.println("hiiiiiiiiiiiiiiii");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
         if(e.getSource()== library_button)
         {
+            master_choice=3;
+            adminAgentGUI admin_window = new adminAgentGUI();
             //textfield.getText();
-            librarianAgentGUI library_window = new librarianAgentGUI();
+            //librarianAgentGUI library_window = new librarianAgentGUI();
             this.dispose();
-            System.out.println("vamosssssssssss");
+           // System.out.println("vamosssssssssss");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
         if(e.getSource()== printer_button)
         {
+            master_choice=5;
+            adminAgentGUI admin_window = new adminAgentGUI();
             //textfield.getText();
-            printAgentGUI print_window = new printAgentGUI();
+            //printAgentGUI print_window = new printAgentGUI();
             this.dispose();
-            System.out.println("nooooooooo");
+            //System.out.println("nooooooooo");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
-        if(e.getSource()== admin_button)
+        if(e.getSource()== Register_button)
         {
+            master_choice=1;
             //textfield.getText();
             adminAgentGUI admin_window = new adminAgentGUI();
             this.dispose();
-            System.out.println("yessssssssss");
+            //System.out.println("yessssssssss");
+            //button2.setEnabled(false); //will disable the button after one click
+            //textfield.setEditable(false);
+        }
+        if(e.getSource()== deregister_button)
+        {
+            master_choice=2;
+            //textfield.getText();
+            adminAgentGUI admin_window = new adminAgentGUI();
+            this.dispose();
+            //System.out.println("yessssssssss");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
