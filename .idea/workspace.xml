@@ -31,14 +31,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Abdelrahman-Elnaggar &lt;nag.abdelrahman95@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="New_config_branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,9 +42,6 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Hs8o191VFLMMyyZE85Dz0V6fJG" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Remove" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -91,7 +83,8 @@
   </component>
   <component name="RunManager">
     <configuration name="jade_config" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="jade.Boot" />
       <module name="Digital_Library_System" />
       <option name="PROGRAM_PARAMETERS" value="-gui -agents &quot;Librarian:librarian_agent; Admin:admin_agent&quot;" />
@@ -329,7 +322,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="2022_12_01_15_20_Sujesh" />
+                        <option value="librarian_agent" />
                       </list>
                     </value>
                   </entry>
