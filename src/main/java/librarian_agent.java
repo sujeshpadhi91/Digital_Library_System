@@ -4,11 +4,13 @@ import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
 
 import java.util.Scanner;
-
+import javax.swing.*;
+import java.awt.*;
 public class librarian_agent extends Agent {
     private int librarian_counter = 0;
     private boolean done = false;
     protected void setup() {
+        mainAgentGUI home_page = new mainAgentGUI();
         System.out.printf("My name is %s%n", getLocalName());
         addBehaviour(new SimpleBehaviour(this) {
             public void action() {
@@ -16,7 +18,6 @@ public class librarian_agent extends Agent {
                 switch (librarian_counter) {
                     case 0:
                         //Wait for Book lend request from Student
-
                     case 1:
                         //Send student verification request to the Admin agent
                         String student_input = "";

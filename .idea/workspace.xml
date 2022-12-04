@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f23c38f-c67f-42d8-907e-6a8eca3526f5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jade.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jade.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/adminAgentGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/librarianAgentGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mainAgentGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/printAgentGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stationerAgentGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APDescription.txt" beforeDir="false" afterPath="$PROJECT_DIR$/APDescription.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTPs-Main-Container.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MTPs-Main-Container.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/librarian_agent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/librarian_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/librarian_agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/librarian_agent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarian_agent$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/librarian_agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarian_agent.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -45,6 +59,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "134",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
     "last_opened_file_path": "C:/Users/hp/JADE-all-4.5.0/lib/jade.jar",
@@ -99,7 +114,7 @@
       <workItem from="1669331975796" duration="4676000" />
       <workItem from="1669741521290" duration="1942000" />
       <workItem from="1669933048606" duration="588000" />
-      <workItem from="1670048176986" duration="212000" />
+      <workItem from="1670048176986" duration="20562000" />
     </task>
     <task id="LOCAL-00001" summary="first draft librarian_agent.java into main">
       <created>1669062772440</created>
