@@ -11,7 +11,7 @@ import java.io.*;
 //import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 
 public class admin_agent extends Agent {
-    private int admin_counter = 0;
+    public static int admin_counter = 0;
     private boolean done = false;
     protected void setup() {
         System.out.printf("My name is %s%n", getLocalName());
@@ -20,6 +20,23 @@ public class admin_agent extends Agent {
                 //System.out.println("Check");
                 switch(admin_counter) {
                     case 0:
+                        ACLMessage agent_request = blockingReceive();
+                        if(agent_request.getContent().equals("Register"))
+                        {
+                            admin_counter = 2;
+                        }
+                        else if(agent_request.getContent().equals("Deregister"))
+                        {
+                            admin_counter = 3;
+                        }
+                        else if(agent_request.getContent().equals("Verify"))
+                        {
+                            admin_counter = 1;
+                        }
+                        break;
+
+                    case 1:
+                        //Query the Database to check the Student details for verification
                         int id_db = 0;
                         String name_db = "";
                         //Wait for Verification request from the Librarian Agent or the Stationer Agent or the Print Agent
@@ -49,7 +66,7 @@ public class admin_agent extends Agent {
                                 if(id_db!=0)
                                 {
                                     //System.out.println("Found");
-                                    student_verification_status.setContent("Registered");
+                                    student_verification_status.setContent("Already registered");
                                     send(student_verification_status);
                                     //admin_counter = 4;
                                     //librarian_agent.librarian_counter = 3;
@@ -70,12 +87,9 @@ public class admin_agent extends Agent {
                             } catch (SQLException e) {
                                 throw new RuntimeException(e);
                             }
-                                //admin_counter = 4;
+                            //admin_counter = 4;
                         }
                         break;
-
-                    case 1:
-                        //Query the Database to check the Student details for verification
                     case 2:
                         //Take and process a new registration request
                         Scanner sc = new Scanner(System.in);
@@ -99,6 +113,7 @@ public class admin_agent extends Agent {
                             Statement stmt = con.createStatement();
                             stmt.executeUpdate("insert into student values ('"+id+"','"+name+"','"+email+"','"+100+"','"+true+"','"+false+"','"+0+"')");
                             //System.out.println(result);
+                            System.out.println("Student record created successfully!");
                             admin_counter = 4;
 
                         } catch (SQLException e) {
@@ -123,17 +138,15 @@ public class admin_agent extends Agent {
                                     "jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS", "dls@mydls", "SENG696Proj");
                             //System.out.println(con);
                             Statement stmt = con.createStatement();
-                            stmt.executeUpdate("delete from students where student_id = '" + id1 + "'");
+                            stmt.executeUpdate("delete from student where student_id = '" + id1 + "'");
                             //System.out.println(result);
+                            System.out.println("Record Deleted!");
                             admin_counter = 4;
-
-
+                            break;
                         }
                         catch (SQLException e) {
                         throw new RuntimeException(e);
                         }
-                        break;
-
 
                     case 4:
                         //Finish processing the student verification and/or registration requests

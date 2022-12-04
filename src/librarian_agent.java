@@ -15,6 +15,16 @@ public class librarian_agent extends Agent {
                 switch (librarian_counter) {
                     case 0:
                         //Wait for Book lend request from Student
+                        ACLMessage student_status = blockingReceive();
+                        if(student_status.getContent().equals("Lend"))
+                        {
+                            //Do lending case
+                        }
+                        else if(student_status.getContent().equals("Return"))
+                        {
+                            //Do returning case
+                        }
+                        break;
 
                     case 1:
                         //Send student verification request to the Admin agent
@@ -25,7 +35,7 @@ public class librarian_agent extends Agent {
 
                         ACLMessage student_verification = new ACLMessage(ACLMessage.REQUEST);
                         student_verification.setContent(student_input);
-                        student_verification.addReceiver(new AID("ADMIN", AID.ISLOCALNAME));
+                        student_verification.addReceiver(new AID("Admin", AID.ISLOCALNAME));
                         send(student_verification);
                         System.out.println("Librarian: Sent Student Verification Request to the ADMIN");
                         librarian_counter = 2;
@@ -62,6 +72,11 @@ public class librarian_agent extends Agent {
                         //Finish processing the book requests
                         System.out.println("Librarian: Finished Librarian Roles");
                         done = true;
+                        break;
+                    case 8:
+                        //idle
+                        System.out.println("Librarian: Idling");
+                        break;
                 }
             }
 
