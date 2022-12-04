@@ -13,13 +13,16 @@ import java.io.*;
 public class admin_agent extends Agent {
     public static int admin_counter = 0;
     private boolean done = false;
+    public int check = 0;
+    public ACLMessage msg = new ACLMessage();
     protected void setup() {
-        System.out.printf("My name is %s%n", getLocalName());
+        System.out.printf("Admin: I am online %s%n", getLocalName());
         addBehaviour(new SimpleBehaviour(this) {
             public void action(){
                 //System.out.println("Check");
                 switch(admin_counter) {
                     case 0:
+                        System.out.printf("Admin: My name is %s%n", getLocalName());
                         ACLMessage agent_request = blockingReceive();
                         if(agent_request.getContent().equals("Register"))
                         {
@@ -29,8 +32,11 @@ public class admin_agent extends Agent {
                         {
                             admin_counter = 3;
                         }
-                        else if(agent_request.getContent().equals("Verify"))
+                        else
                         {
+                            msg = agent_request;
+                            check = Integer.parseInt(msg.getContent());
+                            System.out.println(check);
                             admin_counter = 1;
                         }
                         break;
@@ -40,11 +46,11 @@ public class admin_agent extends Agent {
                         int id_db = 0;
                         String name_db = "";
                         //Wait for Verification request from the Librarian Agent or the Stationer Agent or the Print Agent
-                        ACLMessage student_verification = blockingReceive();
-                        if (student_verification != null) {
-                            System.out.println("Admin: Request to verify the student: "+student_verification.getContent());
-                            String check = student_verification.getContent();
-                            ACLMessage student_verification_status = student_verification.createReply();
+
+                        if (check != 0) {
+                            System.out.println("Admin: Request to verify the student ID: "+check);
+
+                            ACLMessage student_verification_status = msg.createReply();
                             student_verification_status.setPerformative(ACLMessage.INFORM);
                             //student_verification_status.setContent("Admin: Student is Registered");
                             //send(student_verification_status);
@@ -53,8 +59,8 @@ public class admin_agent extends Agent {
                                         "jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
                                 //System.out.println(con);
                                 Statement stmt = con.createStatement();
-                                ResultSet result = stmt.executeQuery("select * from student where student_name = '"+check+"' ");
-                                //System.out.println(result);
+                                ResultSet result = stmt.executeQuery("select * from student where student_id = '"+check+"' ");
+                                System.out.println(result);
 
                                 while (result.next())
                                 {
@@ -66,7 +72,7 @@ public class admin_agent extends Agent {
                                 if(id_db!=0)
                                 {
                                     //System.out.println("Found");
-                                    student_verification_status.setContent("Already registered");
+                                    student_verification_status.setContent("Registered");
                                     send(student_verification_status);
                                     //admin_counter = 4;
                                     //librarian_agent.librarian_counter = 3;
