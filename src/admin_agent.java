@@ -85,7 +85,7 @@ public class admin_agent extends Agent {
                                     student_verification_status.setContent("Not Registered");
                                     send(student_verification_status);
                                     System.out.println("Admin: You must register, please enter your details when prompted!");
-                                    admin_counter = 2;
+                                    admin_counter = 0;
                                 }
 
                                 //System.out.println(id_db+" "+name_db);

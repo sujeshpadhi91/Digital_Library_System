@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 public class librarian_agent extends Agent {
     public static int librarian_counter = 0;
+    public boolean borrowed;
+    public int book_id;
+    public String borrowed_book;
     private boolean done = false;
     protected void setup() {
         System.out.printf("Librarian: I am online %s%n", getLocalName());
@@ -64,6 +67,8 @@ public class librarian_agent extends Agent {
                         else
                         {
                             System.out.println("Librarian: Student with ID: "+master_agent.student_id+"is not registered.\nPlease Register from the Homepage to proceed.");
+
+                            librarian_counter = 99;
                         }
                         //System.out.println("Librarian: "+librarian_counter);
                         //librarian_counter = 7;
@@ -82,11 +87,26 @@ public class librarian_agent extends Agent {
                                 Statement create_statement = connection_book_status_for_student.createStatement();
                                 ResultSet book_details_for_student = create_statement.executeQuery("select book_id,book_borrowed from student where student_id = '"+master_agent.student_id+"'");
 
+                                while(book_details_for_student.next())
+                                {
+                                    book_id = book_details_for_student.getInt("book_id");
+                                }
+
+                                while(book_details_for_student.next())
+                                {
+                                    borrowed = book_details_for_student.getBoolean("book_borrowed");
+                                }
+
+
                                 //If a book has been already borrowed then Return is mandatory first
-                                if (book_details_for_student.equals(true)) {
-                                    ResultSet borrowed_book_name = create_statement.executeQuery("select book_name from book where book_id = '"+book_details_for_student.getInt("book_id")+"'");
-                                    System.out.println("You have already borrowed a Book: "+borrowed_book_name+".\nPlease return the book to proceed.");
-                                } else if (book_details_for_student.equals(false)) {
+                                if (borrowed==true) {
+                                    ResultSet borrowed_book_name = create_statement.executeQuery("select book_name from book where book_id = '"+book_id+"'");
+                                    while (borrowed_book_name.next())
+                                    {
+                                        borrowed_book = borrowed_book_name.getString("book_name");
+                                    }
+                                    System.out.println("You have already borrowed a Book: "+borrowed_book+".\nPlease return the book to proceed.");
+                                } else if (borrowed==false) {
                                     librarian_counter = 4;
                                 }
                             } catch (SQLException e) {
