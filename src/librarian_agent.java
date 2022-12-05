@@ -2,15 +2,20 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
-
 import java.sql.*;
 import java.util.Scanner;
 
 public class librarian_agent extends Agent {
     public static int librarian_counter = 0;
-    public boolean borrowed;
-    public int book_id;
-    public String borrowed_book;
+    public boolean borrowed_book_status;
+    public int borrowed_book_id;
+    public String borrowed_book_name;
+    public String[][] book_list_displayed = {{"Book1","1"},{"Book2","2"},{"Book3","3"}};
+
+    public int book_quantity = -1;
+
+//    public String book_borrowed_status_update;
+
     private boolean done = false;
     protected void setup() {
         System.out.printf("Librarian: I am online %s%n", getLocalName());
@@ -89,24 +94,24 @@ public class librarian_agent extends Agent {
 
                                 while(book_details_for_student.next())
                                 {
-                                    book_id = book_details_for_student.getInt("book_id");
+                                    borrowed_book_id = book_details_for_student.getInt("book_id");
                                 }
 
                                 while(book_details_for_student.next())
                                 {
-                                    borrowed = book_details_for_student.getBoolean("book_borrowed");
+                                    borrowed_book_status = book_details_for_student.getBoolean("book_borrowed");
                                 }
 
 
                                 //If a book has been already borrowed then Return is mandatory first
-                                if (borrowed==true) {
-                                    ResultSet borrowed_book_name = create_statement.executeQuery("select book_name from book where book_id = '"+book_id+"'");
+                                if (borrowed_book_status) {
+                                    ResultSet borrowed_book_name = create_statement.executeQuery("select book_name from book where book_id = '"+ borrowed_book_id +"'");
                                     while (borrowed_book_name.next())
                                     {
-                                        borrowed_book = borrowed_book_name.getString("book_name");
+                                        librarian_agent.this.borrowed_book_name = borrowed_book_name.getString("book_name");
                                     }
-                                    System.out.println("You have already borrowed a Book: "+borrowed_book+".\nPlease return the book to proceed.");
-                                } else if (borrowed==false) {
+                                    System.out.println("You have already borrowed a Book: "+ librarian_agent.this.borrowed_book_name +".\nPlease return the book to proceed.");
+                                } else if (borrowed_book_status == false) {
                                     librarian_counter = 4;
                                 }
                             } catch (SQLException e) {
@@ -131,13 +136,40 @@ public class librarian_agent extends Agent {
                             ResultSet book_list = create_statement.executeQuery("select * from book");
 
                             //Process the Book borrow request
-                            System.out.println("case 4: Process the Book borrow request");
+                            System.out.println("Librarian: Process the Book borrow request");
+                            System.out.println("Select a book to borrow: "+book_list_displayed);
+                            Scanner scanner_book_id = new Scanner(System.in);
+                            master_agent.book_id = Integer.parseInt(scanner_book_id.nextLine());
+
+                            while (book_list.next()) {
+                                book_quantity = book_list.getInt("quantity");
+                            }
+                            book_quantity = book_quantity - 1;
+
+                            Connection connection_book_count_update = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
+                            PreparedStatement readStatement_book_count = connection_book_count_update.prepareStatement("SELECT quantity FROM book WHERE book_id = ?");
+                            readStatement_book_count.setInt(1,book_quantity);
+                            ResultSet book_count_update = readStatement_book_count.executeQuery();
+
+
+//                            ResultSet book_borrowed_status_update = create_statement.executeQuery("select book_borrowed from student where book_id = '"+borrowed_book_id+"'");
+//
+//                            while (book_borrowed_status_update.next()) {
+//                                boolean book_borrowed_status = true;
+//                            }
+
+                            PreparedStatement readStatement_student_borrow_status = connection_book_count_update.prepareStatement("SELECT book_borrowed FROM student WHERE book_id = ?");
+                            readStatement_student_borrow_status.setBoolean(1,true);
+                            ResultSet student_borrow_status = readStatement_student_borrow_status.executeQuery();
+                            System.out.println("Your book borrow request is complete.");
+
 //                            if (book_list.equals(true)) {
 //                                ResultSet borrowed_book_name = create_statement.executeQuery("select book_name from book where book_id = '"+book_list.getInt("book_id")+"'");
 //                                System.out.println("You have already borrowed a Book: "+borrowed_book_name+".\nPlease return the book to proceed.");
 //                            } else if (book_list.equals(false)) {
 //                                librarian_counter = 4;
 //                            }
+                            librarian_counter = 99;
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }
@@ -147,10 +179,41 @@ public class librarian_agent extends Agent {
                         //Process Book Return request
                         System.out.println("case 5: Process Book Return request");
                         //Show the book to be returned
+                        Connection connection_book_borrowed = null;
+                        try {
+                            connection_book_borrowed = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
+                            Statement create_statement = connection_book_borrowed.createStatement();
+                            ResultSet student_details = create_statement.executeQuery("select * from student where student_id = '"+master_agent.student_id+"'");
 
+                            while (student_details.next()) {
+                                int borrowed_book_id = student_details.getInt("book_id");
+                            }
 
-                        //Process the return request
+                            ResultSet book_details = create_statement.executeQuery("select * from book where book_id = '"+borrowed_book_id+"'");
 
+                            while (book_details.next()) {
+                                String borrowed_book_name = book_details.getString("book_name");
+                                book_quantity = student_details.getInt("quantity");
+                            }
+
+                            book_quantity = book_quantity + 1;
+
+                            //Process the return request
+                            Connection connection_book_count_update = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
+                            PreparedStatement readStatement_book_count = connection_book_count_update.prepareStatement("SELECT quantity FROM book WHERE book_id = ?");
+                            readStatement_book_count.setInt(1,book_quantity);
+                            ResultSet book_count_update = readStatement_book_count.executeQuery();
+
+                            PreparedStatement readStatement_student_borrow_status = connection_book_count_update.prepareStatement("SELECT book_borrowed FROM student WHERE book_id = ?");
+                            readStatement_student_borrow_status.setBoolean(1,false);
+                            ResultSet student_borrow_status = readStatement_student_borrow_status.executeQuery();
+                            System.out.println("Your book return request is complete.");
+
+                            librarian_counter = 99;
+
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
 
                         break;
 

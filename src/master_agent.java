@@ -14,6 +14,8 @@ public class master_agent extends Agent {
     public static String student_name = "";
     public static String student_id = "";
 
+    public static int book_id;
+
 //    public static int stationer_counter = 0;
 //    public static int print_counter = 0;
 
