@@ -24,7 +24,7 @@ public class admin_agent extends Agent {
                 //System.out.println("Check");
                 switch(admin_counter) {
                     case 0:
-                        System.out.printf("Admin: My name is %s%n", getLocalName());
+                        System.out.printf("Admin lalala: My name is %s%n", getLocalName());
                         ACLMessage agent_request = blockingReceive();
                         if(agent_request.getContent().equals("Register"))
                         {
@@ -117,12 +117,7 @@ public class admin_agent extends Agent {
                         System.out.println("Admin: Enter ID:");
                         int id = adminAgentGUI.ID;
                         System.out.println("Admin: Enter email:");
-                        String email = null;
-                        try {
-                            email = br.readLine();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
+                        String email = adminAgentGUI.student_email;
 
                         try {
                             Connection con=DriverManager.getConnection(
@@ -133,11 +128,13 @@ public class admin_agent extends Agent {
                             //System.out.println(result);
                             //System.out.println("Student record created successfully!");
                             JOptionPane.showMessageDialog(null,"Student record created successfully","Registration",JOptionPane.PLAIN_MESSAGE);
+                            //master_agent.student_counter = 0;
                             admin_counter = 4;
 
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }
+                        master_agent.flag=0;
                         break;
 
                         //check if already present in db, if not then push. If yes, show message.
@@ -167,16 +164,21 @@ public class admin_agent extends Agent {
                             //System.out.println("Record Deleted!");
                             JOptionPane.showMessageDialog(null,"Student record deleted!","De-registration",JOptionPane.PLAIN_MESSAGE);
                             admin_counter = 4;
+                            master_agent.flag=0;
                             break;
                         }
                         catch (SQLException e) {
                         throw new RuntimeException(e);
                         }
 
+
                     case 4:
                         //Finish processing the student verification and/or registration requests
                         System.out.println("Admin: Finished Admin Roles");
-                        done = true;
+                        //master_agent.flag=0;
+                        admin_counter = 0;
+
+                        //done = true;
                 }
             }
             public boolean done() {

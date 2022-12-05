@@ -13,6 +13,7 @@ public class master_agent extends Agent {
     public static int choice_of_book_operations = -1;
     public static String student_name = "";
     public static String student_id = "";
+    public static int flag = -1;
 
     public static int book_id;
 
@@ -22,25 +23,46 @@ public class master_agent extends Agent {
     protected void setup() {
 //        System.out.printf("Master: My name is %s%n", getLocalName());
         Scanner sc = new Scanner(System.in);
-        mainAgentGUI main_window = new mainAgentGUI();
+        //mainAgentGUI main_window = new mainAgentGUI();
         addBehaviour(new SimpleBehaviour() {
             @Override
             public void action() {
                 switch (student_counter) {
                     case 0:
                         //Request user input
+                        while(flag==1)
+                        {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+                        mainAgentGUI main_window = new mainAgentGUI();
+                        flag=1;
+                        mainAgentGUI.master_choice=0;
+                        adminAgentGUI.name=null;
+                        adminAgentGUI.ID=0;
                         System.out.printf("Master: My name is %s%n", getLocalName());
                         System.out.println("Master: Enter 1: Register\nEnter 2: Deregister\nEnter 3: Library\nEnter 4: Stationer\nEnter 5: Print");
-                        int choice = sc.nextInt();
-                        if(choice==1)
+                        while(mainAgentGUI.master_choice==0)
+                        {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+                        int choice = mainAgentGUI.master_choice;
+                        if(choice==1) //Register
                         {
                             student_counter = 1;
                         }
-                        else if(choice==2)
+                        else if(choice==2) //Deregister
                         {
                             student_counter = 2;
                         }
-                        else if (choice==3)
+                        else if (choice==3) //Library
                         {
 //                            System.out.println("Library - \nPress 1: Lend\nPress 2: Return");
 //                            libchoice = sc.nextInt();
@@ -54,11 +76,11 @@ public class master_agent extends Agent {
 //                            }
                             student_counter = 3;
                         }
-                        else if(choice==4)
+                        else if(choice==4) //Stationer
                         {
                             student_counter = 5;
                         }
-                        else if(choice==5)
+                        else if(choice==5) //Printer
                         {
                             student_counter = 6;
                         }
@@ -143,6 +165,7 @@ public class master_agent extends Agent {
 
                     case 99 :
                         //Student agent goes silent (but still active)
+                        student_counter = 0;
 
 
                 }

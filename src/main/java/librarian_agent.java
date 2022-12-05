@@ -46,12 +46,20 @@ public class librarian_agent extends Agent {
                     case 1:
                         //Send student verification request to the Admin agent
 //                        String student_input = "";
+                        while(adminAgentGUI.ID==0)
+                        {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
                         System.out.println("Librarian: Enter Student First Name: ");
-                        Scanner scanner_student_name = new Scanner(System.in);
-                        master_agent.student_name = scanner_student_name.nextLine();
+                        //Scanner scanner_student_name = new Scanner(System.in);
+                        master_agent.student_name = adminAgentGUI.name;
                         System.out.println("Librarian: Enter Student ID: ");
-                        Scanner scanner_student_id = new Scanner(System.in);
-                        master_agent.student_id = scanner_student_id.nextLine();
+                        //Scanner scanner_student_id = new Scanner(System.in);
+                        master_agent.student_id = Integer.toString(adminAgentGUI.ID);
 
                         ACLMessage student_verification = new ACLMessage(ACLMessage.REQUEST);
                         student_verification.setContent(master_agent.student_id);
