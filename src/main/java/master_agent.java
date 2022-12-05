@@ -22,7 +22,7 @@ public class master_agent extends Agent {
     protected void setup() {
 //        System.out.printf("Master: My name is %s%n", getLocalName());
         Scanner sc = new Scanner(System.in);
-
+        mainAgentGUI main_window = new mainAgentGUI();
         addBehaviour(new SimpleBehaviour() {
             @Override
             public void action() {
