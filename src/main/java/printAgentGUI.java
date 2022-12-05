@@ -82,7 +82,8 @@ public class printAgentGUI extends JFrame implements ActionListener {
             //print_button.setEnabled(true);
             if (e.getSource() == print_button) {
                 no_pages = Integer.parseInt(pages.getText());
-                JOptionPane.showMessageDialog(null,"Number of pages: "+no_pages,"title",JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Number of pages: "+no_pages+"\nSuccessfully printed!","Success!",JOptionPane.PLAIN_MESSAGE);
+                master_agent.flag=0;
             }
 
 

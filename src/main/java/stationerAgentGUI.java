@@ -87,7 +87,7 @@ stationerAgentGUI()
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
             JOptionPane.showMessageDialog(null,"successful purchase","Status",JOptionPane.INFORMATION_MESSAGE);
-
+            master_agent.flag=0;
         }
     }
 }

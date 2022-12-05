@@ -159,7 +159,7 @@ public class print_agent extends Agent {
                                 updateStatement.setInt(2, studentid);
                                 updateStatement.executeUpdate();
                                 System.out.print("Your pages have been printed. Thank you \n");
-                                print_counter = 3; break;
+                                print_counter = 4; break;
 
                             } catch (Exception e) {
                                 System.out.println(e);
@@ -167,7 +167,7 @@ public class print_agent extends Agent {
                         }
                         break;
 
-
+/*
                     case 3:
 
                         System.out.print("Would you like to print more pages? [y/n]: ");
@@ -178,7 +178,7 @@ public class print_agent extends Agent {
                         } else {
                             print_counter = 4; break;
                         }
-
+*/
 
                     case 4:
                         //Finish processing the print request
