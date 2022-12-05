@@ -44,7 +44,7 @@ public class print_agent extends Agent {
             public void action() {
                 switch (print_counter) {
 
-                /*    case 0:
+                    case 0:
 
                         //listening to admin agent for request to print X number of pages
 
@@ -57,9 +57,9 @@ public class print_agent extends Agent {
                             print_counter = 1;
 
                         }
-                        break;*/
+                        break;
 
-                    case 0:
+                    case 1:
 
                         // Take input from Student for his Student ID
                         try{
@@ -71,38 +71,31 @@ public class print_agent extends Agent {
 
                             // Send this Student id to Admin Agent for registration verification
 
-                     /*   ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
+                        ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
                         msg.setContent(studentid);
                         msg.addReceiver(new AID("Admin", AID.ISLOCALNAME));
-                        send(msg);*/
+                        send(msg);
 
                         } catch (Exception e) {
                             System.out.println(e);
                         }
 
-                        print_counter =1;
+                        print_counter =0;
                         break;
 
-                    case 1:
+                    case 2:
 
                         // connect to db and query student details to work on them after
 
                         try{
-                           /* log.info("Loading application properties");
-                            Properties properties = new Properties();
-                            properties.load(DemoApplication.class.getClassLoader().getResourceAsStream("application.properties"));
 
-                            log.info("Connecting to the database");
-                            Connection connection = DriverManager.getConnection(properties.getProperty("url"), properties);
-                            log.info("Database connection test: " + connection.getCatalog());*/
 
                             Connection connection = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
                             PreparedStatement readStatement = connection.prepareStatement("SELECT print_limit FROM student WHERE student_id = ?");
                             readStatement.setString(1,studentid);
                             ResultSet resultSet = readStatement.executeQuery();
 
-                            //Statement stmt = connection.createStatement();
-                            //ResultSet result = stmt.executeQuery("select print_limit from student where student_id = 987654");
+;
                             if (!resultSet.next()) {
                                 log.info("There is no data in the database!");
                             }
@@ -133,7 +126,7 @@ public class print_agent extends Agent {
                         if (number_of_pages > current_limit) {
                             System.out.printf("Your current limit is to print %d pages \n", current_limit);
                             System.out.print("Please enter a number below the limit \n");
-                            print_counter = 1; break;
+                            print_counter = 2; break;
 
                         }
 
@@ -149,7 +142,7 @@ public class print_agent extends Agent {
                                 updateStatement.setInt(1, new_limit);
                                 updateStatement.executeUpdate();
                                 System.out.print("Your pages have been printed. Thank you \n");
-                                print_counter = 2; break;
+                                print_counter = 3; break;
 
                             } catch (Exception e) {
                                 System.out.println(e);
@@ -158,19 +151,19 @@ public class print_agent extends Agent {
                         break;
 
 
-                    case 2:
+                    case 3:
 
                         System.out.print("Would you like to print more pages? [y/n]: ");
                         Scanner scanner1 = new Scanner(System.in);
                         scaninput = scanner1.next();
                         if(scaninput.equals("y")) {
-                            print_counter = 0; break;
+                            print_counter = 1; break;
                         } else {
-                            print_counter = 3; break;
+                            print_counter = 4; break;
                         }
 
 
-                    case 3:
+                    case 4:
                         //Finish processing the print request
 
                         System.out.println("Thank you for using the print agent");
@@ -181,7 +174,7 @@ public class print_agent extends Agent {
 
             public boolean done() {
                 if (done) {
-                    System.out.printf("My name is %s %n", getLocalName());
+                    System.out.printf("My name is %s \n", getLocalName());
                 }
                 return done;
             }
