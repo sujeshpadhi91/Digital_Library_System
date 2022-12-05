@@ -14,36 +14,40 @@ public class mainAgentGUI extends JFrame implements ActionListener {
 
     mainAgentGUI()
     {
-
-        ///////////////////////////////////////////
-        stationery_button = new JButton();
-        stationery_button.setBounds(150,350,100,50);
-        stationery_button.addActionListener(this);
-        stationery_button.setText("Stationery");
-        stationery_button.setFocusable(false);
         ///////////////////////////////////////
         library_button = new JButton();
-        library_button.setBounds(50,250,100,50);
+        library_button.setBounds(50,300,100,100);
         library_button.addActionListener(this);
         library_button.setText("Library");
+//        library_button.setBackground(Color.CYAN);
         library_button.setFocusable(false);
+        ///////////////////////////////////////////
+        stationery_button = new JButton();
+        stationery_button.setBounds(225,300,100,100);
+        stationery_button.addActionListener(this);
+        stationery_button.setText("Stationary");
+//        stationery_button.setBackground(Color.CYAN);
+        stationery_button.setFocusable(false);
         ///////////////////////////////////////////////////
         printer_button = new JButton();
-        printer_button.setBounds(300,350,100,50);
+        printer_button.setBounds(400,300,100,100);
         printer_button.addActionListener(this);
         printer_button.setText("Print");
+//        printer_button.setBackground(Color.CYAN);
         printer_button.setFocusable(false);
         /////////////////////////////////////
         Register_button = new JButton();
-        Register_button.setBounds(200,250,100,50);
+        Register_button.setBounds(125,150,100,50);
         Register_button.addActionListener(this);
         Register_button.setText("Register");
+//        Register_button.setBackground(Color.orange);
         Register_button.setFocusable(false);
         ///////////////////////////////////////
         deregister_button = new JButton();
-        deregister_button.setBounds(350,250,100,50);
+        deregister_button.setBounds(325,150,100,50);
         deregister_button.addActionListener(this);
         deregister_button.setText("Deregister");
+//        deregister_button.setBackground(Color.orange);
         deregister_button.setFocusable(false);
         //////////////////////////////////////////////////////////
         //JFrame frame = new JFrame();//create frame
@@ -52,10 +56,11 @@ public class mainAgentGUI extends JFrame implements ActionListener {
         label.setText("Digital Library System");
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.TOP);
-        label.setFont(new Font("Helvetica",Font.BOLD,25));
+        this.getContentPane().setBackground(Color.lightGray);
+        label.setFont(new Font("Helvetica",Font.BOLD,30));
         label.setVerticalAlignment(JLabel.TOP);
         label.setHorizontalAlignment(JLabel.CENTER);
-        label.setBounds(150,50,300,150);
+        label.setBounds(75,50,400,200);
         label.setVisible(true);
         //label.setLayout(null);
         ///////////////////////////////////////////
