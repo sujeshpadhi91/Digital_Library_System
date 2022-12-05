@@ -17,7 +17,7 @@ public class librarian_agent extends Agent {
 
 //    public String book_borrowed_status_update;
     public static String[] books = new String[10];
-
+    public static int[] books_ID = new int[10];
     private boolean done = false;
     protected void setup() {
         System.out.printf("Librarian: I am online %s%n", getLocalName());
@@ -27,6 +27,24 @@ public class librarian_agent extends Agent {
 
                 switch (librarian_counter) {
                     case 0:
+                        try {
+                            Connection connection_book_list4 = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
+                            Statement create_statement = connection_book_list4.createStatement();
+                            ResultSet book_list4 = create_statement.executeQuery("select * from book");
+
+                            int i =0;
+                            while(book_list4.next())
+                            {
+//                                System.out.println(book_list.getInt("book_id")+"\t"+book_list.getString("book_name"));
+                                books[i] = book_list4.getString("book_name");
+                                books_ID[i]= book_list4.getInt("book_id");
+//                                System.out.print(i);
+                                System.out.println(books[i]);
+                                i++;
+                            }
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
                         System.out.printf("Librarian: My name is %s%n", getLocalName());
                         //Wait for Book operation request from Student
                         ACLMessage student_book_operations_request = blockingReceive();

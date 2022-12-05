@@ -13,6 +13,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
     public static String msg=null;
     public static int msg2=0;
     public static int borrow_val=0;
+    public static int return_val=0;
     librarianAgentGUI()
     {
         //String s ="Select";
@@ -86,7 +87,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
         {
             JComboBox cb = (JComboBox) e.getSource();
              msg = (String)cb.getSelectedItem();
-             System.out.println("Book"+ msg);
+             //System.out.println("Book "+ msg);
             borrow_button.setEnabled(true);
             borrow_val=1;
             //button2.setEnabled(false); //will disable the button after one click
@@ -107,6 +108,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
         }
         if(e.getSource()== return_button)
         {
+            return_val=2;
             //JComboBox cb = (JComboBox) e.getSource();
             //String msg = (String)cb.getSelectedItem();
             //borrow_button.setEnabled(true);
