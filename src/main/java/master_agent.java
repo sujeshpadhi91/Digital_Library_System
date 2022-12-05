@@ -135,7 +135,7 @@ public class master_agent extends Agent {
                         System.out.println("Printer");
                         ACLMessage student_print = new ACLMessage(ACLMessage.REQUEST);
                         student_print.setContent("Print");
-                        student_print.addReceiver(new AID("Print", AID.ISLOCALNAME));
+                        student_print.addReceiver(new AID("Printer", AID.ISLOCALNAME));
                         send(student_print);
 
                         student_counter = 99;

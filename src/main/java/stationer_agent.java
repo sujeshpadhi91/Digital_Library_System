@@ -53,7 +53,7 @@ public class stationer_agent extends Agent {
 
                         ACLMessage request = blockingReceive();
                         if (request != null) {
-                            if(request.getContent().equals("Verified")) {
+                            if(request.getContent().equals("Registered")) {
                                 //condition to distinguish between reply from Admin and Master
                                 stationer_counter = 2; break;
                             }
@@ -83,7 +83,7 @@ public class stationer_agent extends Agent {
                             System.out.println(e);
                         }
 
-                        stationer_counter =0;
+                        stationer_counter = 0;
 
                         break;
 
@@ -98,6 +98,13 @@ public class stationer_agent extends Agent {
                             Connection connection = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
 
                             // bring item names
+                            System.out.println("Enter item name:");
+                            Scanner scanner = new Scanner(System.in);
+                            item_name = scanner.next();
+
+                            System.out.println("Enter quantity: ");
+                            bought_items = scanner.nextInt();
+
 
                             PreparedStatement readStmtName = connection.prepareStatement("SELECT quantity FROM items where item_name = ?");
                             readStmtName.setString(1,item_name);

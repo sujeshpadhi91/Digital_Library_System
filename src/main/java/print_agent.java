@@ -50,7 +50,7 @@ public class print_agent extends Agent {
 
                         ACLMessage request = blockingReceive();
                         if (request != null) {
-                            if(request.getContent().equals("Verified")) {
+                            if(request.getContent().equals("Registered")) {
                                 //condition to distinguish between reply from Admin and Master
                                 print_counter = 2; break;
                             }
@@ -138,8 +138,9 @@ public class print_agent extends Agent {
 
                             try {
                                 Connection connection = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS", "dls@mydls", "SENG696Proj");
-                                PreparedStatement updateStatement = connection.prepareStatement("UPDATE student SET print_limit = ?");
+                                PreparedStatement updateStatement = connection.prepareStatement("UPDATE student SET print_limit = ? where student_id = ?");
                                 updateStatement.setInt(1, new_limit);
+                                updateStatement.setString(2, studentid);
                                 updateStatement.executeUpdate();
                                 System.out.print("Your pages have been printed. Thank you \n");
                                 print_counter = 3; break;
@@ -157,7 +158,7 @@ public class print_agent extends Agent {
                         Scanner scanner1 = new Scanner(System.in);
                         scaninput = scanner1.next();
                         if(scaninput.equals("y")) {
-                            print_counter = 1; break;
+                            print_counter = 2; break;
                         } else {
                             print_counter = 4; break;
                         }
