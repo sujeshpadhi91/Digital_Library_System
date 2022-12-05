@@ -19,12 +19,14 @@ public class stationer_agent extends Agent {
     public String scaninput;
     public int number_of_items;
 
-    private String studentid;
+    private int studentid;
     private String itemid;
 
     public int remaining_items;
     private int bought_items = 0;
     public String item_name;
+
+    public static String[] items = new String[10];
 
 
     //to terminate the agent action
@@ -69,13 +71,23 @@ public class stationer_agent extends Agent {
 
                             System.out.print("Welcome to Stationer Agent \n");
                             System.out.print("Please Enter Your Student ID: ");
+
+                            while(adminAgentGUI.ID==0)
+                            {
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+
                             Scanner scanner = new Scanner(System.in);
-                            studentid = scanner.next();
+                            studentid = adminAgentGUI.ID;
 
                             // Send this Student id to Admin Agent for registration verification
 
                         ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-                        msg.setContent(studentid);
+                        msg.setContent(studentid+"");
                         msg.addReceiver(new AID("Admin", AID.ISLOCALNAME));
                         send(msg);
 
@@ -97,10 +109,28 @@ public class stationer_agent extends Agent {
 
                             Connection connection = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
 
+                            Statement create_statement = connection.createStatement();
+                            ResultSet item_list = create_statement.executeQuery("select * from items");
+                            int i = 0;
+                            while(item_list.next())
+                            {
+                                items[i] = item_list.getString("item_name");
+                                System.out.println(items[i]);
+                                i++;
+                            }
+
                             // bring item names
                             System.out.println("Enter item name:");
+                            while(stationerAgentGUI.msg==null)
+                            {
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
                             Scanner scanner = new Scanner(System.in);
-                            item_name = scanner.next();
+                            item_name = stationerAgentGUI.msg;
 
                             System.out.println("Enter quantity: ");
                             bought_items = scanner.nextInt();
@@ -109,6 +139,8 @@ public class stationer_agent extends Agent {
                             PreparedStatement readStmtName = connection.prepareStatement("SELECT quantity FROM items where item_name = ?");
                             readStmtName.setString(1,item_name);
                             ResultSet resultSetName = readStmtName.executeQuery();
+
+
 
                             // count the items
 

@@ -15,12 +15,12 @@ public class print_agent extends Agent {
     //initialized as 0
     // public because it will be used by other agents
     public int print_counter = 0;
-    public String inputpages;
+    public int inputpages;
     public String scaninput;
     public int number_of_pages;
     public int new_limit;
     public int current_limit;
-    private String studentid;
+    private int studentid;
 
 
     //to terminate the agent action
@@ -65,14 +65,22 @@ public class print_agent extends Agent {
                         try{
 
                             System.out.print("Welcome to Printer Station \n");
+                            while(adminAgentGUI.ID==0)
+                            {
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
                             System.out.print("Please Enter Your Student ID: ");
-                            Scanner scanner = new Scanner(System.in);
-                            studentid = scanner.next();
+                            //Scanner scanner = new Scanner(System.in);
+                            studentid = adminAgentGUI.ID;
 
                             // Send this Student id to Admin Agent for registration verification
 
                         ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-                        msg.setContent(studentid);
+                        msg.setContent(studentid+"");
                         msg.addReceiver(new AID("Admin", AID.ISLOCALNAME));
                         send(msg);
 
@@ -92,7 +100,7 @@ public class print_agent extends Agent {
 
                             Connection connection = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
                             PreparedStatement readStatement = connection.prepareStatement("SELECT print_limit FROM student WHERE student_id = ?");
-                            readStatement.setString(1,studentid);
+                            readStatement.setInt(1,studentid);
                             ResultSet resultSet = readStatement.executeQuery();
 
 ;
@@ -117,9 +125,17 @@ public class print_agent extends Agent {
                         System.out.print("You are a registered student. \n");
                         System.out.println("Your current limit to print pages is: " + current_limit);
                         System.out.print("Please enter the number of pages to print: ");
+                        while(printAgentGUI.no_pages==0)
+                        {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
                         Scanner scanner = new Scanner(System.in);
-                        inputpages = scanner.next();
-                        number_of_pages = Integer.parseInt(inputpages);
+                        inputpages = printAgentGUI.no_pages;
+                        number_of_pages = inputpages;
 
                         // check if number of pages requested to print are within current print limit
 
@@ -140,7 +156,7 @@ public class print_agent extends Agent {
                                 Connection connection = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS", "dls@mydls", "SENG696Proj");
                                 PreparedStatement updateStatement = connection.prepareStatement("UPDATE student SET print_limit = ? where student_id = ?");
                                 updateStatement.setInt(1, new_limit);
-                                updateStatement.setString(2, studentid);
+                                updateStatement.setInt(2, studentid);
                                 updateStatement.executeUpdate();
                                 System.out.print("Your pages have been printed. Thank you \n");
                                 print_counter = 3; break;

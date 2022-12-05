@@ -16,6 +16,7 @@ public class librarian_agent extends Agent {
     //public int borrowed_book_id = -1;
 
 //    public String book_borrowed_status_update;
+    public static String[] books = new String[10];
 
     private boolean done = false;
     protected void setup() {
@@ -135,15 +136,23 @@ public class librarian_agent extends Agent {
                             Connection connection_book_list = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS","dls@mydls","SENG696Proj");
                             Statement create_statement = connection_book_list.createStatement();
                             ResultSet book_list = create_statement.executeQuery("select * from book");
+//                            ResultSet book_list_temp = create_statement.executeQuery("select book_name from book");
+
 
                             //Process the Book borrow request
                             System.out.println("Librarian: Process the Book borrow request");
                             System.out.println("Select a book to borrow: ");
 
+                            int i =0;
                             while(book_list.next())
                             {
-                                System.out.println(book_list.getInt("book_id")+"\t"+book_list.getString("book_name"));
+//                                System.out.println(book_list.getInt("book_id")+"\t"+book_list.getString("book_name"));
+                                books[i] = book_list.getString("book_name");
+//                                System.out.print(i);
+                                System.out.println(books[i]);
+                                i++;
                             }
+
 
                             Scanner scanner_book_id = new Scanner(System.in);
                             master_agent.book_id = Integer.parseInt(scanner_book_id.nextLine());

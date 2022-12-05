@@ -6,6 +6,8 @@ import java.sql.Statement;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
+
+import javax.swing.*;
 import java.util.Scanner;
 import java.io.*;
 //import com.microsoft.sqlserver.jdbc.SQLServerDriver;
@@ -98,14 +100,22 @@ public class admin_agent extends Agent {
                         break;
                     case 2:
                         //Take and process a new registration request
+                        while(adminAgentGUI.name==null)
+                        {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
                         Scanner sc = new Scanner(System.in);
                         BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
                         System.out.println("Admin: Enter first name: ");
-                        String name = sc.nextLine();
+                        String name = adminAgentGUI.name;
                        // String name2 = adminAgentGUI.x;
                         //System.out.println("Admin: Enter first name:"+name2);
                         System.out.println("Admin: Enter ID:");
-                        int id = sc.nextInt();
+                        int id = adminAgentGUI.ID;
                         System.out.println("Admin: Enter email:");
                         String email = null;
                         try {
@@ -121,7 +131,8 @@ public class admin_agent extends Agent {
                             Statement stmt = con.createStatement();
                             stmt.executeUpdate("insert into student values ('"+id+"','"+name+"','"+email+"','"+100+"','"+true+"','"+false+"','"+0+"')");
                             //System.out.println(result);
-                            System.out.println("Student record created successfully!");
+                            //System.out.println("Student record created successfully!");
+                            JOptionPane.showMessageDialog(null,"Student record created successfully","Registration",JOptionPane.PLAIN_MESSAGE);
                             admin_counter = 4;
 
                         } catch (SQLException e) {
@@ -133,13 +144,18 @@ public class admin_agent extends Agent {
                     case 3:
                         //Take and process a new de-registration request
                         int id1 = -1;
-                        br = new BufferedReader (new InputStreamReader(System.in));
-                        System.out.println("Enter ID:");
-                        try {
-                            id1 = Integer.parseInt(br.readLine());
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
+                        //br = new BufferedReader (new InputStreamReader(System.in));
+                        while(adminAgentGUI.ID==0)
+                        {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
+                        System.out.println("Enter ID:");
+                        id1 = adminAgentGUI.ID;
+
 
                         try {
                             Connection con = DriverManager.getConnection(
@@ -148,7 +164,8 @@ public class admin_agent extends Agent {
                             Statement stmt = con.createStatement();
                             stmt.executeUpdate("delete from student where student_id = '" + id1 + "'");
                             //System.out.println(result);
-                            System.out.println("Record Deleted!");
+                            //System.out.println("Record Deleted!");
+                            JOptionPane.showMessageDialog(null,"Student record deleted!","De-registration",JOptionPane.PLAIN_MESSAGE);
                             admin_counter = 4;
                             break;
                         }
