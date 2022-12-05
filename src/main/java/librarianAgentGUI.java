@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class librarianAgentGUI extends JFrame implements ActionListener {
 
@@ -13,6 +14,8 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
     JComboBox return_list;
     public static String msg=null;
     public static int msg2=0;
+    public static int bb_id;
+    public static String bb_name;
     public static int borrow_val=0;
     public static int return_val=0;
     public static String[] return_book= new String[1];
@@ -32,7 +35,28 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
         //books_list.setSelectedItem(s);
         books_list.addActionListener(this);
         books_list.setBounds(100,200,100,25);
-         return_book[0]= librarian_agent.borrowed_book_name;
+
+        try {
+            Connection cb_borrowed = DriverManager.getConnection("jdbc:sqlserver://mydls.database.windows.net:1433;DatabaseName=myDLS", "dls@mydls", "SENG696Proj");
+            Statement create_statement = cb_borrowed.createStatement();
+            ResultSet student_details = create_statement.executeQuery("select * from student where student_id = '" + master_agent.student_id + "'");
+
+            while (student_details.next()) {
+                bb_id = student_details.getInt("book_id");
+            }
+
+            ResultSet book_details = create_statement.executeQuery("select * from book where book_id = '" + bb_id + "'");
+
+            while (book_details.next()) {
+                bb_name = book_details.getString("book_name");
+                //book_quantity = book_details.getInt("quantity");
+            }
+        }
+            catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        return_book[0]= bb_name;
         return_list = new JComboBox(return_book);
         return_list.setSelectedIndex(0);
         //books_list.setSelectedItem(s);
@@ -84,7 +108,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
         this.add(books_list);
         this.add(return_list);
         this.add(return_button);
-        this.add(Return_ID);
+        //this.add(Return_ID);
         //this.add(textfield);
         //this.pack();
         this.setVisible(true);//make frame visible

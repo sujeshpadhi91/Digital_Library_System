@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class librarian_agent extends Agent {
     public static int librarian_counter = 0;
     public boolean borrowed_book_status;
-    public static int borrowed_book_id;
-    public static String borrowed_book_name;
+    public static int borrowed_book_id=-1;
+    public static String borrowed_book_name="";
     //public String[][] book_list_displayed = {{"Book1","1"},{"Book2","2"},{"Book3","3"}};
 
     public int book_quantity = -1;
@@ -235,7 +235,7 @@ public class librarian_agent extends Agent {
 //                            } else if (book_list.equals(false)) {
 //                                librarian_counter = 4;
 //                            }
-                            librarian_counter = 99;
+                            librarian_counter = 8;
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }
@@ -283,9 +283,10 @@ public class librarian_agent extends Agent {
                             //readStatement_student_borrow_status.setBoolean(1,false);
                             //ResultSet student_borrow_status = readStatement_student_borrow_status.executeQuery();
                             System.out.println("Your book return request is complete.");
-                            //master_agent.flag=0;
+                            JOptionPane.showMessageDialog(null,"Your book return request is complete!","Success!",JOptionPane.PLAIN_MESSAGE);
 
-                            librarian_counter = 99;
+                            librarian_counter = 8;
+                            master_agent.flag=0;
 
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
@@ -302,6 +303,8 @@ public class librarian_agent extends Agent {
                     case 8:
                         //idle
                         System.out.println("Librarian: Idling");
+                        librarianAgentGUI.borrow_val=0;
+                        librarian_counter=0;
                         break;
                 }
             }
