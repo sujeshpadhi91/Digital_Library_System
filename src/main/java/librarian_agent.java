@@ -2,6 +2,8 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
+
+import javax.swing.*;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -110,8 +112,16 @@ public class librarian_agent extends Agent {
 
                     case 3:
                         //Choice of Book Operations
+                        while(librarianAgentGUI.borrow_val==0)
+                        {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
                         System.out.println("Library - \nPress 1: Borrow\nPress 2: Return");
-                        master_agent.choice_of_book_operations = sc.nextInt();
+                        master_agent.choice_of_book_operations = librarianAgentGUI.borrow_val;
                         if(master_agent.choice_of_book_operations==1)
                         {
                             //Query the DataBase to check if there is an already borrowed book by the Student
@@ -180,14 +190,15 @@ public class librarian_agent extends Agent {
                             }
 
 
-                            Scanner scanner_book_id = new Scanner(System.in);
-                            master_agent.book_id = Integer.parseInt(scanner_book_id.nextLine());
+                            //Scanner scanner_book_id = new Scanner(System.in);
+                            String bookname = librarianAgentGUI.msg;
 
                             Statement create_statement1 = connection_book_list.createStatement();
-                            book_list = create_statement1.executeQuery("select * from book where book_id = '"+master_agent.book_id+"'");
+                            book_list = create_statement1.executeQuery("select * from book where book_name = '"+bookname+"'");
 
                             while (book_list.next()) {
                                 book_quantity = book_list.getInt("quantity");
+                                master_agent.book_id = book_list.getInt("book_id");
                             }
                             book_quantity = book_quantity - 1;
 
@@ -215,6 +226,8 @@ public class librarian_agent extends Agent {
                             //readStatement_student_borrow_status.setBoolean(1,true);
                            // ResultSet student_borrow_status = readStatement_student_borrow_status.executeQuery();
                             System.out.println("Your book borrow request is complete.");
+                            JOptionPane.showMessageDialog(null,"Your book borrow request is complete!","Success!",JOptionPane.PLAIN_MESSAGE);
+                            master_agent.flag=0;
 
 //                            if (book_list.equals(true)) {
 //                                ResultSet borrowed_book_name = create_statement.executeQuery("select book_name from book where book_id = '"+book_list.getInt("book_id")+"'");
@@ -270,6 +283,7 @@ public class librarian_agent extends Agent {
                             //readStatement_student_borrow_status.setBoolean(1,false);
                             //ResultSet student_borrow_status = readStatement_student_borrow_status.executeQuery();
                             System.out.println("Your book return request is complete.");
+                            //master_agent.flag=0;
 
                             librarian_counter = 99;
 

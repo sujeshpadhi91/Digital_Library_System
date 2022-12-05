@@ -89,13 +89,13 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
              msg = (String)cb.getSelectedItem();
              //System.out.println("Book "+ msg);
             borrow_button.setEnabled(true);
-            borrow_val=1;
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
         if(e.getSource()== borrow_button)
         {
            // JComboBox cb = (JComboBox) e.getSource();
+            borrow_val=1;
            // msg = (String)cb.getSelectedItem();
             //JComboBox cb = (JComboBox) e.getSource();
             //String msg = (String)cb.getSelectedItem();
