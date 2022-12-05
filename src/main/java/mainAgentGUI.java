@@ -87,7 +87,6 @@ public class mainAgentGUI extends JFrame implements ActionListener {
             //stationerAgentGUI stationry_window = new stationerAgentGUI();
             //textfield.getText();
             this.dispose();
-            //System.out.println("hiiiiiiiiiiiiiiii");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
@@ -129,7 +128,6 @@ public class mainAgentGUI extends JFrame implements ActionListener {
             //textfield.getText();
             adminAgentGUI admin_window = new adminAgentGUI();
             this.dispose();
-            //System.out.println("yessssssssss");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }

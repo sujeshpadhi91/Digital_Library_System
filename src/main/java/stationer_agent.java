@@ -121,7 +121,7 @@ public class stationer_agent extends Agent {
 
                             // bring item names
                             System.out.println("Enter item name:");
-                            while(stationerAgentGUI.msg==null)
+                            while(stationerAgentGUI.msg_item==null)
                             {
                                 try {
                                     Thread.sleep(1000);
@@ -130,7 +130,7 @@ public class stationer_agent extends Agent {
                                 }
                             }
                             Scanner scanner = new Scanner(System.in);
-                            item_name = stationerAgentGUI.msg;
+                            item_name = stationerAgentGUI.msg_item;
 
                             System.out.println("Enter quantity: ");
                             bought_items = scanner.nextInt();

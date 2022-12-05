@@ -7,12 +7,13 @@ public class stationerAgentGUI extends JFrame implements ActionListener {
 
     JButton home_button;
     JButton buy_button;
+    public static String msg_item =null;
     JComboBox stationery_list;
 stationerAgentGUI()
 {
     //String s ="Select";
-    String[] book = {"Item1", "Item2","Item3"};
-    stationery_list = new JComboBox(book);
+    String[] item =stationer_agent.items ;
+    stationery_list = new JComboBox(item);
     stationery_list.setSelectedIndex(0);
     //books_list.setSelectedItem(s);
     stationery_list.addActionListener(this);
@@ -67,14 +68,13 @@ stationerAgentGUI()
             mainAgentGUI home_page = new mainAgentGUI();
             //textfield.getText();
             this.dispose();
-            System.out.println("hiiiiiiiiiiiiiiii");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
         if(e.getSource()== stationery_list)
         {
             JComboBox cb = (JComboBox) e.getSource();
-            String msg = (String)cb.getSelectedItem();
+             msg_item = (String)cb.getSelectedItem();
             buy_button.setEnabled(true);
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);

@@ -13,7 +13,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
     librarianAgentGUI()
     {
         //String s ="Select";
-        String[] book = {"book1", "book2","book3"};
+        String[] book = librarian_agent.books;
         books_list = new JComboBox(book);
         books_list.setSelectedIndex(0);
         //books_list.setSelectedItem(s);
@@ -75,7 +75,6 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
             mainAgentGUI home_page = new mainAgentGUI();
             //textfield.getText();
             this.dispose();
-            System.out.println("hiiiiiiiiiiiiiiii");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
         }
@@ -96,7 +95,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
             //textfield.setEditable(false);
             borrow_button.setEnabled(false);
             books_list.setEnabled(false);
-            JOptionPane.showMessageDialog(null,"up dog","what's",JOptionPane.INFORMATION_MESSAGE);
+
         }
         if(e.getSource()== return_button)
         {
@@ -107,7 +106,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
             //textfield.setEditable(false);
             borrow_button.setEnabled(false);
             books_list.setEnabled(false);
-            JOptionPane.showMessageDialog(null,"up dog","what's",JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(null,"up dog","what's",JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

@@ -7,10 +7,12 @@ public class adminAgentGUI extends JFrame implements ActionListener {
 
     public static String name=null;
     public static int ID=0;
+    public static String student_email=null;
     JButton home_button;
     JButton next_button;
     JButton submit_ID;
     JTextField student_name;
+    JTextField email;
     JTextField student_ID;
     adminAgentGUI()
     {
@@ -21,6 +23,11 @@ public class adminAgentGUI extends JFrame implements ActionListener {
         student_name.setFont(new Font("Consloas",Font.PLAIN,15));
         //student_name.setText("username");
         //textfield.addActionListener(this);
+/////////////////////////////////////////////////////
+        email = new JTextField();
+        email.setBounds(100,300,100,30);
+        //textfield.setPreferredSize(new Dimension(250,40));
+        email.setFont(new Font("Consloas",Font.PLAIN,15));
         ///////////////////////////////////////////////
         //text field
         student_ID = new JTextField();
@@ -69,6 +76,16 @@ public class adminAgentGUI extends JFrame implements ActionListener {
         label1.setHorizontalAlignment(JLabel.CENTER);
         label1.setBounds(0,205,100,30);
         label1.setVisible(true);
+        ////////////////////////////////////////
+        JLabel label3 = new JLabel();
+        label3.setText(" Email:");
+        label3.setHorizontalAlignment(JLabel.CENTER);
+        label3.setVerticalTextPosition(JLabel.TOP);
+        label3.setFont(new Font("Helvetica",Font.BOLD,15));
+        label3.setVerticalAlignment(JLabel.TOP);
+        label3.setHorizontalAlignment(JLabel.CENTER);
+        label3.setBounds(0,310,100,30);
+        label3.setVisible(true);
         //label.setLayout(null);
         ///////////////////////////////////////////
         JLabel label2 = new JLabel();
@@ -93,11 +110,13 @@ public class adminAgentGUI extends JFrame implements ActionListener {
         this.add(label);
         this.add(label1);
         this.add(label2);
+        this.add(label3);
         this.add(home_button);
         this.add(next_button);
         this.add(submit_ID);
         this.add(student_name);
         this.add(student_ID);
+        this.add(email);
         //this.pack();
         this.setVisible(true);//make frame visible
     }
@@ -118,15 +137,12 @@ public class adminAgentGUI extends JFrame implements ActionListener {
                 //mainAgentGUI home_page = new mainAgentGUI();
                 name = student_name.getText();
                 ID=Integer.parseInt(student_ID.getText());
+                student_email=email.getText();
                 student_name.setEditable(false);
                 student_ID.setEditable(false);
-                //this.dispose();
-                System.out.println("ana geeeeeeeeeeeeeeeet");
                 submit_ID.setEnabled(false);
                 next_button.setEnabled(true);
-                //button2.setEnabled(false); //will disable the button after one click
-                //textfield.setEditable(false);
-                JOptionPane.showMessageDialog(null,"tessssst","title",JOptionPane.PLAIN_MESSAGE);
+                //JOptionPane.showMessageDialog(null,"Student record created successfully","Registration",JOptionPane.PLAIN_MESSAGE);
             }
 
         if (e.getSource() == next_button) {
@@ -159,10 +175,6 @@ public class adminAgentGUI extends JFrame implements ActionListener {
                 //do nothing
             }
             this.dispose();
-            System.out.println("ana geeeeeeeeeeeeeeeet");
-            //next_button.setEnabled(true);
-            //button2.setEnabled(false); //will disable the button after one click
-            //textfield.setEditable(false);
             //JOptionPane.showMessageDialog(null,"tessssst","title",JOptionPane.PLAIN_MESSAGE);
         }
 
