@@ -2,6 +2,8 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
+
+import javax.swing.*;
 import java.util.Scanner;
 import java.sql.*;
 import java.util.*;
@@ -58,6 +60,12 @@ public class stationer_agent extends Agent {
                             if(request.getContent().equals("Registered")) {
                                 //condition to distinguish between reply from Admin and Master
                                 stationer_counter = 2; break;
+                            }
+                            else if(request.getContent().equals("Not Registered"))
+                            {
+                                JOptionPane.showMessageDialog(null,"Student not registered!","Registration Error",JOptionPane.PLAIN_MESSAGE);
+                                master_agent.flag=0;
+                                break;
                             }
                             stationer_counter = 1;
 

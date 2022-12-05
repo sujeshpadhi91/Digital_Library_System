@@ -2,6 +2,8 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
+
+import javax.swing.*;
 import java.util.Scanner;
 import java.sql.*;
 import java.util.*;
@@ -53,6 +55,12 @@ public class print_agent extends Agent {
                             if(request.getContent().equals("Registered")) {
                                 //condition to distinguish between reply from Admin and Master
                                 print_counter = 2; break;
+                            }
+                            else if(request.getContent().equals("Not Registered"))
+                            {
+                                JOptionPane.showMessageDialog(null,"Student not registered!","Registration Error",JOptionPane.PLAIN_MESSAGE);
+                                master_agent.flag=0;
+                                break;
                             }
                             print_counter = 1;
 
@@ -113,7 +121,12 @@ public class print_agent extends Agent {
 
                             if (current_limit== 0) {
                                 System.out.print("You have reached you print limit \n");
-                                print_counter = 3;break;}
+                                JOptionPane.showMessageDialog(null,"You have reached your print limit!","Error",JOptionPane.PLAIN_MESSAGE);
+
+                                master_agent.flag=0;
+                                print_counter = 0;
+                                break;
+                            }
 
 
                         } catch (Exception e){
@@ -142,7 +155,9 @@ public class print_agent extends Agent {
                         if (number_of_pages > current_limit) {
                             System.out.printf("Your current limit is to print %d pages \n", current_limit);
                             System.out.print("Please enter a number below the limit \n");
-                            print_counter = 2; break;
+                            JOptionPane.showMessageDialog(null,"Number requested is above the print limit!","Error",JOptionPane.PLAIN_MESSAGE);
+                            master_agent.flag=0;
+                            print_counter = 0; break;
 
                         }
 
@@ -159,7 +174,9 @@ public class print_agent extends Agent {
                                 updateStatement.setInt(2, studentid);
                                 updateStatement.executeUpdate();
                                 System.out.print("Your pages have been printed. Thank you \n");
-                                print_counter = 4; break;
+
+                                master_agent.flag=0;
+                                print_counter = 0; break;
 
                             } catch (Exception e) {
                                 System.out.println(e);

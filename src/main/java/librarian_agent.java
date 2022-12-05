@@ -101,9 +101,10 @@ public class librarian_agent extends Agent {
                         }
                         else
                         {
-                            System.out.println("Librarian: Student with ID: "+master_agent.student_id+"is not registered.\nPlease Register from the Homepage to proceed.");
-
-                            librarian_counter = 99;
+                            JOptionPane.showMessageDialog(null,"Student not registered!","Registration Error",JOptionPane.PLAIN_MESSAGE);
+                            master_agent.flag=0;
+                            librarian_counter=0;
+                            //librarian_counter = 99;
                         }
                         //System.out.println("Librarian: "+librarian_counter);
                         //librarian_counter = 7;
