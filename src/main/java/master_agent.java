@@ -10,12 +10,17 @@ public class master_agent extends Agent {
     public static int admin_counter = 0;
     public static int librarian_counter = 0;
     public static int choice = -1;
-    public static int libchoice = -1;
+    public static int choice_of_book_operations = -1;
+    public static String student_name = "";
+    public static String student_id = "";
+
+    public static int book_id;
+
 //    public static int stationer_counter = 0;
 //    public static int print_counter = 0;
 
     protected void setup() {
-        System.out.printf("Student: My name is %s%n", getLocalName());
+//        System.out.printf("Master: My name is %s%n", getLocalName());
         Scanner sc = new Scanner(System.in);
 
         addBehaviour(new SimpleBehaviour() {
@@ -24,7 +29,8 @@ public class master_agent extends Agent {
                 switch (student_counter) {
                     case 0:
                         //Request user input
-                        System.out.println("Enter 1: Register\nEnter 2: Deregister\nEnter 3: Library\nEnter 4: Stationer\nEnter 5: Print");
+                        System.out.printf("Master: My name is %s%n", getLocalName());
+                        System.out.println("Master: Enter 1: Register\nEnter 2: Deregister\nEnter 3: Library\nEnter 4: Stationer\nEnter 5: Print");
                         int choice = sc.nextInt();
                         if(choice==1)
                         {
@@ -36,16 +42,17 @@ public class master_agent extends Agent {
                         }
                         else if (choice==3)
                         {
-                            System.out.println("Library - \nPress 1: Lend\nPress 2: Return");
-                            libchoice = sc.nextInt();
-                            if(libchoice==1)
-                            {
-                                student_counter = 3;
-                            }
-                            else if(libchoice==2)
-                            {
-                                student_counter = 4;
-                            }
+//                            System.out.println("Library - \nPress 1: Lend\nPress 2: Return");
+//                            libchoice = sc.nextInt();
+//                            if(libchoice==1)
+//                            {
+//                                student_counter = 3;
+//                            }
+//                            else if(libchoice==2)
+//                            {
+//                                student_counter = 4;
+//                            }
+                            student_counter = 3;
                         }
                         else if(choice==4)
                         {
@@ -70,34 +77,44 @@ public class master_agent extends Agent {
 
 
                     case 2:
-                        //redirect request to admin for dereg
-                        ACLMessage student_dereg = new ACLMessage(ACLMessage.REQUEST);
-                        student_dereg.setContent("Deregister");
-                        student_dereg.addReceiver(new AID("Admin", AID.ISLOCALNAME));
-                        send(student_dereg);
+                        //redirect request to admin for de-registration
+                        ACLMessage student_de_registration = new ACLMessage(ACLMessage.REQUEST);
+                        student_de_registration.setContent("Deregister");
+                        student_de_registration.addReceiver(new AID("Admin", AID.ISLOCALNAME));
+                        send(student_de_registration);
 
                         //admin_agent.admin_counter = 3;
                         student_counter = 99;
                         break;
 
+//                    case 3:
+//                        //redirect request to librarian-lend agent
+//                        System.out.println("Lend");
+//                        ACLMessage student_lend = new ACLMessage(ACLMessage.REQUEST);
+//                        student_lend.setContent("Lend");
+//                        student_lend.addReceiver(new AID("Librarian", AID.ISLOCALNAME));
+//                        send(student_lend);
+//
+//                        student_counter = 99;
+//                        break;
+//
+//                    case 4:
+//                        //redirect request to librarian-return agent
+//                        System.out.println("Return");
+//                        ACLMessage student_ret = new ACLMessage(ACLMessage.REQUEST);
+//                        student_ret.setContent("Return");
+//                        student_ret.addReceiver(new AID("Librarian", AID.ISLOCALNAME));
+//                        send(student_ret);
+//
+//                        student_counter = 99;
+//                        break;
+
                     case 3:
-                        //redirect request to librarian-lend agent
-                        System.out.println("Lend");
-                        ACLMessage student_lend = new ACLMessage(ACLMessage.REQUEST);
-                        student_lend.setContent("Lend");
-                        student_lend.addReceiver(new AID("Library", AID.ISLOCALNAME));
-                        send(student_lend);
-
-                        student_counter = 99;
-                        break;
-
-                    case 4:
-                        //redirect request to librarian-return agent
-                        System.out.println("Return");
-                        ACLMessage student_ret = new ACLMessage(ACLMessage.REQUEST);
-                        student_ret.setContent("Return");
-                        student_ret.addReceiver(new AID("Library", AID.ISLOCALNAME));
-                        send(student_ret);
+                        System.out.println("Librarian");
+                        ACLMessage student_lib = new ACLMessage(ACLMessage.REQUEST);
+                        student_lib.setContent("Book_Operations");
+                        student_lib.addReceiver(new AID("Librarian", AID.ISLOCALNAME));
+                        send(student_lib);
 
                         student_counter = 99;
                         break;
