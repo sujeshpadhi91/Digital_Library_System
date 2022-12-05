@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class librarian_agent extends Agent {
     public static int librarian_counter = 0;
     public boolean borrowed_book_status;
-    public int borrowed_book_id;
-    public String borrowed_book_name;
+    public static int borrowed_book_id;
+    public static String borrowed_book_name;
     //public String[][] book_list_displayed = {{"Book1","1"},{"Book2","2"},{"Book3","3"}};
 
     public int book_quantity = -1;

@@ -10,12 +10,20 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
     JButton borrow_button;
     JButton return_button;
     JComboBox books_list;
+    JComboBox return_list;
     public static String msg=null;
     public static int msg2=0;
     public static int borrow_val=0;
     public static int return_val=0;
+    public static String[] return_book= new String[1];
+    JTextField Return_ID;
     librarianAgentGUI()
     {
+        /////////////////////////////////
+        /*Return_ID = new JTextField();
+        Return_ID.setBounds(400,200,80,25);
+        //textfield.setPreferredSize(new Dimension(250,40));
+        Return_ID.setFont(new Font("Consloas",Font.PLAIN,15));*/
         //String s ="Select";
         String[] book = librarian_agent.books;
         int[] books_ID = librarian_agent.books_ID;
@@ -24,6 +32,12 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
         //books_list.setSelectedItem(s);
         books_list.addActionListener(this);
         books_list.setBounds(100,200,100,25);
+         return_book[0]= librarian_agent.borrowed_book_name;
+        return_list = new JComboBox(return_book);
+        return_list.setSelectedIndex(0);
+        //books_list.setSelectedItem(s);
+        return_list.addActionListener(this);
+        return_list.setBounds(400,200,80,25);
         ////////////////////////
         borrow_button = new JButton();
         borrow_button.setBounds(0,200,80,25);
@@ -37,7 +51,7 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
         return_button.addActionListener(this);
         return_button.setText("Return");
         return_button.setFocusable(false);
-        return_button.setEnabled(false);
+        //return_button.setEnabled(false);
         //////////////////////////////////
         home_button = new JButton();
         home_button.setBounds(400,450,150,50);
@@ -68,7 +82,9 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
         this.add(home_button);
         this.add(borrow_button);
         this.add(books_list);
+        this.add(return_list);
         this.add(return_button);
+        this.add(Return_ID);
         //this.add(textfield);
         //this.pack();
         this.setVisible(true);//make frame visible
@@ -106,14 +122,19 @@ public class librarianAgentGUI extends JFrame implements ActionListener {
             books_list.setEnabled(false);
 
         }
-        if(e.getSource()== return_button)
+
+        if(e.getSource()== return_list)
         {
-            return_val=2;
-            //JComboBox cb = (JComboBox) e.getSource();
-            //String msg = (String)cb.getSelectedItem();
-            //borrow_button.setEnabled(true);
+            JComboBox cb = (JComboBox) e.getSource();
+            String x=(String)cb.getSelectedItem();
+            //System.out.println("Book "+ msg);
+            return_button.setEnabled(true);
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
+        }
+        if(e.getSource()== return_button)
+        {
+            borrow_val=2;
             borrow_button.setEnabled(false);
             books_list.setEnabled(false);
             //JOptionPane.showMessageDialog(null,"up dog","what's",JOptionPane.INFORMATION_MESSAGE);
