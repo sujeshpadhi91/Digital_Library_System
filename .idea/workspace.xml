@@ -10,17 +10,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APDescription.txt" beforeDir="false" afterPath="$PROJECT_DIR$/APDescription.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MTPs-Main-Container.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MTPs-Main-Container.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminAgentGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/admin_agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/admin_agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/librarianAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/librarianAgentGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainAgentGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adminAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/adminAgentGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admin_agent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin_agent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admin_agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin_agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/librarianAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarianAgentGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/librarian_agent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarian_agent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/librarian_agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/librarian_agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mainAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainAgentGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/printAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/printAgentGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stationerAgentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stationerAgentGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/printAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/printAgentGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stationerAgentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stationerAgentGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +56,7 @@
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "134",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/hp/IdeaProjects/Digital_Library_System",
+    "last_opened_file_path": "C:/Users/hp/IdeaProjects/Digital_Library_System/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,6 +79,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\IdeaProjects\Digital_Library_System\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hp\IdeaProjects\Digital_Library_System\src" />
     </key>

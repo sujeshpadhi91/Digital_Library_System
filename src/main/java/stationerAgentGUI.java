@@ -6,13 +6,32 @@ import java.awt.event.ActionListener;
 public class stationerAgentGUI extends JFrame implements ActionListener {
 
     JButton home_button;
+    JButton buy_button;
+    JComboBox stationery_list;
 stationerAgentGUI()
 {
+    //String s ="Select";
+    String[] book = {"Item1", "Item2","Item3"};
+    stationery_list = new JComboBox(book);
+    stationery_list.setSelectedIndex(0);
+    //books_list.setSelectedItem(s);
+    stationery_list.addActionListener(this);
+    stationery_list.setBounds(300,200,150,25);
+    //////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////
     home_button = new JButton();
     home_button.setBounds(400,450,150,50);
     home_button.addActionListener(this);
     home_button.setText("Home button");
     home_button.setFocusable(false);
+    ///////////////////////////////////////
+    buy_button = new JButton();
+    buy_button.setBounds(100,200,100,25);
+    buy_button.addActionListener(this);
+    buy_button.setText("Buy");
+    buy_button.setFocusable(false);
+    buy_button.setEnabled(false);
     ////////////////////////////
     JLabel label = new JLabel();
     label.setText("Stationery");
@@ -35,6 +54,8 @@ stationerAgentGUI()
     //this.setLayout(new FlowLayout());
     this.add(label);
     this.add(home_button);
+    this.add(buy_button);
+    this.add(stationery_list);
     //this.add(textfield);
     //this.pack();
     this.setVisible(true);//make frame visible
@@ -49,6 +70,24 @@ stationerAgentGUI()
             System.out.println("hiiiiiiiiiiiiiiii");
             //button2.setEnabled(false); //will disable the button after one click
             //textfield.setEditable(false);
+        }
+        if(e.getSource()== stationery_list)
+        {
+            JComboBox cb = (JComboBox) e.getSource();
+            String msg = (String)cb.getSelectedItem();
+            buy_button.setEnabled(true);
+            //button2.setEnabled(false); //will disable the button after one click
+            //textfield.setEditable(false);
+            //JOptionPane.showMessageDialog(null,"successful purchase","Status",JOptionPane.INFORMATION_MESSAGE);
+
+        }
+        if(e.getSource()== buy_button)
+        {
+            buy_button.setEnabled(false);
+            //button2.setEnabled(false); //will disable the button after one click
+            //textfield.setEditable(false);
+            JOptionPane.showMessageDialog(null,"successful purchase","Status",JOptionPane.INFORMATION_MESSAGE);
+
         }
     }
 }
